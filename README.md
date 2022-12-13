@@ -34,7 +34,7 @@ twala.id.requestClaim({
   soul_account_address: '0xf40ceA2a71b65A553913C867d023F8ac30F1b726',
   claim: 1
 })
-  .then(claim => console.log(claim.id))
+  .then(response => console.log(response))
   .catch(error => console.error(error));
 ```
 
