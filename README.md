@@ -27,7 +27,7 @@ $ yarn add @twala-io/twala-js
 
 The library needs to be configured with your account's application UUID and secret key, which is available in your respective Twala product dashboard. Require the library with the application values:
 
-```
+```js
 const twala = require('twala-js')('app_uuid...', 'app_secret...');
 
 twala.id.requestClaim({
@@ -40,7 +40,7 @@ twala.id.requestClaim({
 
 or by using ES modules and async/await:
 
-```
+```js
 import Twala from 'twala-js';
 const twala = new Twala('app_uuid...', 'app_secret...');
 
