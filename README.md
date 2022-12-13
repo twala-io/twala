@@ -15,10 +15,12 @@ Before proceeding, please make sure that the below requirements is installed and
 
 ## Installation
 
-Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala` npm package.
+Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala-js` npm package.
 
 ```sh-session
-$ npm install -g @twala-io/twala-js
+$ npm install @twala-io/twala-js --save
+# or
+$ yarn add @twala-io/twala-js
 ```
 
 ## Usage
