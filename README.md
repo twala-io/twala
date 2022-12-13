@@ -52,3 +52,5 @@ const document = await twala.sign.sendDocument({
 
 console.log(customer.id);
 ```
+
+## Configuration

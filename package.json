@@ -1,0 +1,26 @@
+{
+  "name": "@twala-io/twala-js",
+  "version": "1.0.0",
+  "description": "The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twala-io/twala-js.git"
+  },
+  "keywords": [
+    "twala",
+    "digital identity",
+    "digital document",
+    "blockchain",
+    "web3"
+  ],
+  "author": "Alexander Paul P. Quinit",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/twala-io/twala-js/issues"
+  },
+  "homepage": "https://github.com/twala-io/twala-js#readme"
+}
