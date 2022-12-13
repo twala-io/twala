@@ -1,6 +1,6 @@
 # Twala Node.js Library
 
-The official Node.js library for Twala API that provides convenient access and utilities for applications written in server-side JavaScript.
+The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.
 
 [![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
 [![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
