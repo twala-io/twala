@@ -2,9 +2,9 @@
 
 The official Node.js library for Twala API that provides convenient access and utilities for applications written in server-side JavaScript.
 
-[![Version](https://img.shields.io/npm/v/@twala-io/twala.svg)](https://npmjs.org/package/@twala-io/twala)
-[![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala.svg)](https://npmjs.org/package/@twala-io/twala)
-[![License](https://img.shields.io/npm/l/@twala-io/twala.svg)](https://github.com/twala-io/twala/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
+[![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
+[![License](https://img.shields.io/npm/l/@twala-io/twala-js.svg)](https://github.com/twala-io/twala/blob/master/package.json)
 
 ## Requirements
 
@@ -18,7 +18,7 @@ Before proceeding, please make sure that the below requirements is installed and
 Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala` npm package.
 
 ```sh-session
-$ npm install -g @twala-io/twala
+$ npm install -g @twala-io/twala-js
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ $ npm install -g @twala-io/twala
 The library needs to be configured with your account's application UUID and secret key, which is available in your respective Twala product dashboard. Require the library with the application values:
 
 ```
-const twala = require('twala')('ap_uuid...', 'app_secret...');
+const twala = require('twala-js')('app_uuid...', 'app_secret...');
 
 twala.id.requestClaim({
   soul_account_address: '0xf40ceA2a71b65A553913C867d023F8ac30F1b726',
@@ -39,8 +39,8 @@ twala.id.requestClaim({
 or by using ES modules and async/await:
 
 ```
-import Twala from 'twala';
-const twala = new Twala('ap_uuid...', 'app_secret...');
+import Twala from 'twala-js';
+const twala = new Twala('app_uuid...', 'app_secret...');
 
 const document = await twala.sign.sendDocument({
   document_name: 'Document 1',
