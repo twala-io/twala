@@ -4,7 +4,8 @@
   "description": "The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "tsc"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/twala-io/twala-js/issues"
   },
-  "homepage": "https://github.com/twala-io/twala-js#readme"
+  "homepage": "https://github.com/twala-io/twala-js#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
 }
