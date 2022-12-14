@@ -53,6 +53,22 @@ console.log(document.uuid);
 
 ## Configuration
 
+The package can be initialized with several options:
+
+```js
+const twala = Twala('app_uuid...', 'app_secret...', {
+  apiVersion: 'v1',
+  maxNetworkRetries: 1
+  timeout: 8000,
+});
+```
+
+| Option                    | Default     | Description                                                                     |
+| ------------------------- | ----------- | ------------------------------------------------------------------------------- |
+| apiVersion                | v1          | Twala API version to be used. If not set the latest version will be used.       |
+| maxNetworkRetries         | 0           | The amount of times a request should be retried.                                |
+| timeout                   | 80000       | Maximum time each request can take in ms.                                       |
+
 ## Support
 
 The most recent major release of `twala-js` includes both new functionality and problem fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. The package's older major versions will still be usable but won't be receiving any updates.
