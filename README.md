@@ -26,7 +26,7 @@ $ npm install @twala-io/twala-js --save
 The library needs to be configured with your account's application UUID and secret key, which is available in your respective Twala product dashboard. Require the library with the application values:
 
 ```js
-const twala = require('twala-js')('app_uuid...', 'app_secret...');
+const twala = require('@twala-io/twala-js')('app_uuid...', 'app_secret...');
 
 twala.id.requestClaim({
   soul_account_address: '0xf40ceA2a71b65A553913C867d023F8ac30F1b726',
@@ -39,7 +39,7 @@ twala.id.requestClaim({
 or by using ES modules and async/await:
 
 ```js
-import Twala from 'twala-js';
+import Twala from '@twala-io/twala-js';
 const twala = new Twala('app_uuid...', 'app_secret...');
 
 const document = await twala.sign.sendDocument({
