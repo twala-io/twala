@@ -6,10 +6,10 @@ type Options = {
   timeout: number,
 }
 
-export class Twala {
-  private appUuid: string
-  private appSecret: string
-  private options: Options = {
+export default class Twala {
+  protected appUuid: string
+  protected appSecret: string
+  protected options: Options = {
     apiVersion: 'v1',
     maxNetworkRetries: 0,
     timeout: 10000,
@@ -31,18 +31,13 @@ export class Twala {
       return nonce
     }
   }
-
-  // id
-  public id = new class {
-    public requestClaim() {
-      return 'REQUEST CLAIM'
-    }
-  }
-
-  // sign
-  public sign = new class {
-    public sendDocument() {
-      return 'SEND DOCUMENT'
-    }
-  }
 }
+
+// Utils class
+// export class Utils extends Twala {
+//   public generateNonce() {
+//     const generatorHelper = new GeneratorHelper()
+//     const nonce = generatorHelper.generateNonce()
+//     return this.appUuid
+//   }
+// }

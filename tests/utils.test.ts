@@ -1,4 +1,4 @@
-import { Twala } from '../src/index'
+import Twala from '../src/index'
 
 test('generate nonce', () => {
   const twala = new Twala('test_app_uuid', 'test_app_secret', {
