@@ -1,6 +1,6 @@
 # Twala Node.js Library
 
-The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.
+The official Node.js library of Twala API for applications written in server-side JavaScript.
 
 [![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
 [![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
@@ -54,3 +54,44 @@ console.log(customer.id);
 ```
 
 ## Configuration
+
+## Support
+
+The most recent major release of `twala-js` includes both new functionality and problem fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. The package's older major versions will still be usable but won't be receiving any updates.
+
+## Development
+
+Install dependencies:
+
+```sh
+npm install
+```
+
+Run tests:
+
+```sh
+npm run test
+```
+
+Run linter:
+
+```sh
+npm run lint
+```
+
+Run formatter:
+
+```sh
+npm run format
+```
+
+Build package:
+
+```sh
+npm run build
+```
+
+Publish package:
+```sh
+npm publish --public
+```
