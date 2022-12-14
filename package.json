@@ -47,7 +47,6 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "crypto": "^1.0.1",
     "uuid": "^9.0.0"
   }
 }
