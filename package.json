@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,10 @@
   },
   "homepage": "https://github.com/twala-io/twala-js#readme",
   "devDependencies": {
+    "prettier": "^2.8.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.9.4"
-  }
+  },
+  "files": ["lib/**/*"]
 }
