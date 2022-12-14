@@ -113,5 +113,5 @@ $ npm run build
 
 Publish package:
 ```sh
-$ npm publish --public
+$ npm publish --access public
 ```
