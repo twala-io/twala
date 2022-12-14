@@ -58,8 +58,8 @@ The package can be initialized with several options:
 ```js
 const twala = Twala('app_uuid...', 'app_secret...', {
   apiVersion: 'v1',
-  maxNetworkRetries: 1
-  timeout: 8000,
+  maxNetworkRetries: 1,
+  timeout: 8000
 });
 ```
 
