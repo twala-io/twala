@@ -19,8 +19,6 @@ Open your terminal (for Mac and Linux) or command prompt (for Windows) and insta
 
 ```sh-session
 $ npm install @twala-io/twala-js --save
-# or
-$ yarn add @twala-io/twala-js
 ```
 
 ## Usage
@@ -61,37 +59,43 @@ The most recent major release of `twala-js` includes both new functionality and 
 
 ## Development
 
+Clone repository:
+
+```sh
+$ git clone git@github.com:twala-io/twala-js.git && cd twala-js
+```
+
 Install dependencies:
 
 ```sh
-npm install
+$ npm install
 ```
 
 Run tests:
 
 ```sh
-npm run test
+$ npm run test
 ```
 
 Run linter:
 
 ```sh
-npm run lint
+$ npm run lint
 ```
 
 Run formatter:
 
 ```sh
-npm run format
+$ npm run format
 ```
 
 Build package:
 
 ```sh
-npm run build
+$ npm run build
 ```
 
 Publish package:
 ```sh
-npm publish --public
+$ npm publish --public
 ```
