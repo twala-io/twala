@@ -58,8 +58,8 @@ The package can be initialized with several options:
 ```js
 const twala = Twala('app_uuid...', 'app_secret...', {
   apiVersion: 'v1',
-  maxNetworkRetries: 1,
-  timeout: 8000
+  maxNetworkRetries: 0,
+  timeout: 10000
 });
 ```
 
@@ -67,7 +67,7 @@ const twala = Twala('app_uuid...', 'app_secret...', {
 | ------------------------- | ----------- | ------------------------------------------------------------------------------- |
 | apiVersion                | v1          | Twala API version to be used. If not set the latest version will be used.       |
 | maxNetworkRetries         | 0           | The amount of times a request should be retried.                                |
-| timeout                   | 80000       | Maximum time each request can take in ms.                                       |
+| timeout                   | 10000       | Maximum time each request can take in ms.                                       |
 
 ## Support
 
