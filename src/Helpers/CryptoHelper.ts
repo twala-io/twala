@@ -1,13 +1,17 @@
-import * as crypto from 'crypto';
+import * as CryptoJS from 'crypto-js';
 
 export default class CryptoHelper {
   public signDataHMAC(data: string, key: string): string {
-    const signedData = crypto.createHmac('sha256', key).update(data).digest('hex');
-    return signedData;
+    const hmac = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, "key");
+    hmac.update(data);
+    const hash = hmac.finalize();
+    return hash.toString(CryptoJS.enc.Base64);
   }
 
-  public verifySignatures(headerSignature: string, webhookSignature: string): boolean {
-    const isVerified = crypto.timingSafeEqual(Buffer.from(headerSignature), Buffer.from(webhookSignature));
+  public verifySignatures(timingSafeEqual: string, webhookSignature: string): boolean {
+    const isVerified = timingSafeEqual === webhookSignature;
     return isVerified;
   }
 }
+
+// Aq+1YwSQLGVvy3N83QPeYgW7bUAdooEu/ZstNqCK8Vk=

@@ -7,10 +7,11 @@ test('generate nonce', () => {
 
 test('generate webhook signature', () => {
   const twala = new Twala('test_app_uuid', 'test_app_secret')
+  console.log(twala.utils.generateWebhookSignature('test', 'test'))
   expect(typeof twala.utils.generateWebhookSignature('test', 'test')).toBe('string')
 })
 
 test('verify webhook signatures', () => {
   const twala = new Twala('test_app_uuid', 'test_app_secret')
-  expect(typeof twala.utils.verifyWebhookSignatures('88cd2108b5347d973cf39cdf9053d7dd42704876d8c9a9bd8e2d168259d3ddf7', '88cd2108b5347d973cf39cdf9053d7dd42704876d8c9a9bd8e2d168259d3ddf7')).toBe('boolean')
+  expect(typeof twala.utils.verifyWebhookSignatures('Aq+1YwSQLGVvy3N83QPeYgW7bUAdooEu/ZstNqCK8Vk=', 'Aq+1YwSQLGVvy3N83QPeYgW7bUAdooEu/ZstNqCK8Vk=')).toBe('boolean')
 })
