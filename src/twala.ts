@@ -1,6 +1,7 @@
+/* tslint:disable:max-classes-per-file */
+
 import GeneratorHelper from './Helpers/GeneratorHelper'
 import CryptoHelper from './Helpers/CryptoHelper'
-
 type Options = {
   apiVersion: string,
   maxNetworkRetries: number,
@@ -45,12 +46,3 @@ export default class Twala {
     }
   }
 }
-
-// Utils class
-// export class Utils extends Twala {
-//   public generateNonce() {
-//     const generatorHelper = new GeneratorHelper()
-//     const nonce = generatorHelper.generateNonce()
-//     return this.appUuid
-//   }
-// }

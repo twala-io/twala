@@ -2,8 +2,8 @@
   "name": "@twala-io/twala-js",
   "version": "1.0.0",
   "description": "The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/twala.js",
+  "types": "lib/twala.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
