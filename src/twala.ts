@@ -35,8 +35,8 @@ export default class Twala {
       return nonce;
     }
 
-    public generateWebhookSignature(stringifiedRequestBody: string, key: string) {
-      const signature = this.cryptoHelper.signDataHMAC(stringifiedRequestBody, key);
+    public generateWebhookSignature(stringifiedRequestBody: string, webhookSecret: string) {
+      const signature = this.cryptoHelper.signDataHMAC(stringifiedRequestBody, webhookSecret);
       return signature;
     }
 
