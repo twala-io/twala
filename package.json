@@ -1,6 +1,6 @@
 {
   "name": "@twala-io/twala-js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "The official Node.js library for Twala API that provides convenient access and utilities for applications written in JavaScript.",
   "main": "lib/twala.js",
   "types": "lib/twala.d.ts",
