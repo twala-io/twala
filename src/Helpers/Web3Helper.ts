@@ -8,7 +8,7 @@ export default class Web3Helper {
     this.web3 = new Web3(this.provider);
   }
 
-  createAccount() {
+  public createAccount() {
     type Account = {
       publicKey: string;
       privateKey: string;
