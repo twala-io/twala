@@ -8,110 +8,86 @@ The official Node.js library of Twala API for applications written in server-sid
 
 ## Requirements
 
-Before proceeding, please make sure that the below requirements is installed and running on your machine.
+Before proceeding, please make sure that the below requirements are installed and running on your machine.
 
-- Node.js >= 14.16.0
-- npm >= 7.6.1
+- Node.js >= v19.4.0
+- npm >= 9.2.0
 
 ## Installation
 
 Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala-js` npm package.
 
-```sh-session
+```sh
 $ npm install @twala-io/twala-js --save
 ```
 
 ## Usage
 
-The library needs to be configured with your account's application UUID and secret key, which is available in your respective Twala product dashboard. Require the library with the application values:
-
-```js
-const twala = require('@twala-io/twala-js')('app_uuid...', 'app_secret...');
-
-twala.id.requestClaim({
-  soul_account_address: '0xf40ceA2a71b65A553913C867d023F8ac30F1b726',
-  claim: 1
-})
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
-```
-
-or by using ES modules and async/await:
+Initialize the library with your RPC provider:
 
 ```js
 import Twala from '@twala-io/twala-js';
-const twala = new Twala('app_uuid...', 'app_secret...');
-
-const document = await twala.sign.sendDocument({
-  document_name: 'Document 1',
-  template_uuid: 'd7898f60-2f27-11ed-9335-bf81eb62a959',
-  ...
-});
-
-console.log(document.uuid);
+const twala = new Twala(provider);
 ```
 
-## Configuration
-
-The package can be initialized with several options:
+Use the library's methods as needed, such as generating nonces, creating webhook signatures, verifying webhook signatures, and signing data:
 
 ```js
-const twala = Twala('app_uuid...', 'app_secret...', {
-  apiVersion: 'v1',
-  maxNetworkRetries: 0,
-  timeout: 10000
-});
-```
+// Generate a nonce
+const nonce = twala.generateNonce();
 
-| Option                    | Default     | Description                                                                     |
-| ------------------------- | ----------- | ------------------------------------------------------------------------------- |
-| apiVersion                | v1          | Twala API version to be used. If not set the latest version will be used.       |
-| maxNetworkRetries         | 0           | The amount of times a request should be retried.                                |
-| timeout                   | 10000       | Maximum time each request can take in ms.                                       |
+// Generate a webhook signature
+const webhookSignature = twala.generateWebhookSignature(stringifiedRequestBody, webhookSecret);
+
+// Verify webhook signatures
+const isVerified = twala.verifyWebhookSignatures(headerSignature, webhookSignature);
+
+// Generate account keys
+const keys = twala.generateAccountKeys()
+
+// Sign document
+const signatureResult = twala.signDocumentUuid(uuid, privateKey);
+```
 
 ## Support
 
-The most recent major release of `twala-js` includes both new functionality and problem fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. The package's older major versions will still be usable but won't be receiving any updates.
+The most recent major release of twala-js includes both new functionality and bug fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. Older major versions of the package will still be usable but won't receive updates.
 
 ## Development
 
-Clone repository:
+To contribute to the development of the Twala Node.js Library, follow these steps:
 
+Clone the repository:
 ```sh
 $ git clone git@github.com:twala-io/twala-js.git && cd twala-js
 ```
 
 Install dependencies:
-
 ```sh
 $ npm install
 ```
 
 Run tests:
-
 ```sh
 $ npm run test
 ```
 
 Run linter:
-
 ```sh
 $ npm run lint
 ```
 
 Run formatter:
-
 ```sh
 $ npm run format
 ```
 
-Build package:
-
+Build the package:
 ```sh
 $ npm run build
 ```
 
-Publish package:
+Publish the package:
 ```sh
 $ npm publish --access public
 ```
