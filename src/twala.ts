@@ -1,48 +1,41 @@
-/* tslint:disable:max-classes-per-file */
-
 import GeneratorHelper from './Helpers/GeneratorHelper';
 import CryptoHelper from './Helpers/CryptoHelper';
-type Options = {
-  apiVersion: string;
-  maxNetworkRetries: number;
-  timeout: number;
-};
+import Web3Helper from './Helpers/Web3Helper';
 
 export default class Twala {
-  protected appUuid: string;
-  protected appSecret: string;
-  protected options: Options = {
-    apiVersion: 'v1',
-    maxNetworkRetries: 0,
-    timeout: 10000,
-  };
+  protected generatorHelper: GeneratorHelper = new GeneratorHelper();
+  protected cryptoHelper: CryptoHelper = new CryptoHelper();
+  protected web3Helper: Web3Helper;
 
-  constructor(appUuid: string, appSecret: string, options?: Options) {
-    this.appUuid = appUuid;
-    this.appSecret = appSecret;
-    if (options) {
-      this.options = options;
-    }
+  constructor(provider: string) {
+    this.web3Helper = new Web3Helper(provider);
   }
 
-  // utils
-  public utils = new (class {
-    public generatorHelper = new GeneratorHelper();
-    public cryptoHelper = new CryptoHelper();
+  public generateNonce() {
+    return this.generatorHelper.generateNonce();
+  }
 
-    public generateNonce() {
-      const nonce = this.generatorHelper.generateNonce();
-      return nonce;
-    }
+  public generateWebhookSignature(stringifiedRequestBody: string, webhookSecret: string) {
+    return this.cryptoHelper.signDataHMAC(stringifiedRequestBody, webhookSecret);
+  }
 
-    public generateWebhookSignature(stringifiedRequestBody: string, webhookSecret: string) {
-      const signature = this.cryptoHelper.signDataHMAC(stringifiedRequestBody, webhookSecret);
-      return signature;
-    }
+  public verifyWebhookSignatures(headerSignature: string, webhookSignature: string) {
+    return this.cryptoHelper.verifySignatures(headerSignature, webhookSignature);
+  }
 
-    public verifyWebhookSignatures(headerSignature: string, webhookSignature: string) {
-      const isVerified = this.cryptoHelper.verifySignatures(headerSignature, webhookSignature);
-      return isVerified;
-    }
-  })();
+  public generateAccountKeys () {
+    const wallet = this.web3Helper.createAccount()
+    return wallet
+  }
+
+  public signDocumentUuid(data: string, privateKey: string) {
+    type SignatureResult = {
+      message: string;
+      message_hash: string;
+      v: string;
+      r: string;
+      s: string;
+    };
+    return this.web3Helper.sign(data, privateKey) as SignatureResult;
+  }
 }
