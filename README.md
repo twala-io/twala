@@ -15,7 +15,7 @@ Before proceeding, please make sure that the below requirements are installed an
 
 ## Installation
 
-Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala-js` npm package.
+Open your terminal (for Mac and Linux) or command prompt (for Windows) and install the `twala-js` npm package:
 
 ```sh
 $ npm install @twala-io/twala-js --save
@@ -23,24 +23,18 @@ $ npm install @twala-io/twala-js --save
 
 ## Usage
 
-Initialize the library with your RPC provider:
+Initialize the library with your `appUuid`, `appSecret`, and `RPC provider`:
 
 ```js
 import Twala from '@twala-io/twala-js';
 const twala = new Twala(appUuid, appSecret, provider);
 ```
 
-Use the library's methods as needed, such as generating nonces, creating webhook signatures, verifying webhook signatures, and signing data:
+Use the library's methods as needed, such as generating nonces, generating account keys, and signing data:
 
 ```js
 // Generate a nonce
 const nonce = twala.generateNonce();
-
-// Generate a webhook signature
-const webhookSignature = twala.generateWebhookSignature(stringifiedRequestBody, webhookSecret);
-
-// Verify webhook signatures
-const isVerified = twala.verifyWebhookSignatures(headerSignature, webhookSignature);
 
 // Generate account keys
 const keys = twala.generateAccountKeys()
@@ -51,7 +45,7 @@ const signatureResult = twala.signDocumentUuid(uuid, privateKey);
 
 ## Support
 
-The most recent major release of twala-js includes both new functionality and bug fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. Older major versions of the package will still be usable but won't receive updates.
+The most recent major release of `twala-js` includes both new functionality and bug fixes. To take advantage of new features and bug patches, including those for security vulnerabilities, if you are using an earlier major version, we advise you to upgrade to the most recent version. Older major versions of the package will still be usable but won't receive updates.
 
 ## Development
 
