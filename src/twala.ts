@@ -27,13 +27,13 @@ export default class Twala {
     return this.cryptoHelper.verifySignatures(headerSignature, webhookSignature);
   }
 
-  public generateAccountKeys () {
-    const wallet = this.web3Helper.createAccount()
-    return wallet
+  public generateAccountKeys() {
+    const wallet = this.web3Helper.createAccount();
+    return wallet;
   }
 
   public signDocumentUuid(uuid: string, privateKey: string) {
     const signatureResult = this.web3Helper.sign(uuid, privateKey);
-    return signatureResult
+    return signatureResult;
   }
 }
