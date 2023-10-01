@@ -27,7 +27,7 @@ Initialize the library with your RPC provider:
 
 ```js
 import Twala from '@twala-io/twala-js';
-const twala = new Twala(provider);
+const twala = new Twala(appUuid, appSecret, provider);
 ```
 
 Use the library's methods as needed, such as generating nonces, creating webhook signatures, verifying webhook signatures, and signing data:

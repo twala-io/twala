@@ -8,8 +8,17 @@ export default class Web3Helper {
     this.web3 = new Web3(this.provider)
   }
 
-  async createAccount () {
-    let account = this.web3.eth.accounts.create()
+  createAccount () {
+    type Account = {
+      publicKey: string,
+      privateKey: string,
+    }
+  
+    const wallet = this.web3.eth.accounts.create()
+    const account: Account = {
+      publicKey: wallet.address,
+      privateKey: wallet.privateKey,
+    }
     return account
   }
 

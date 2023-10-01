@@ -3,11 +3,15 @@ import CryptoHelper from './Helpers/CryptoHelper';
 import Web3Helper from './Helpers/Web3Helper';
 
 export default class Twala {
+  protected appUuid: string;
+  protected appSecret: string;
   protected generatorHelper: GeneratorHelper = new GeneratorHelper();
   protected cryptoHelper: CryptoHelper = new CryptoHelper();
   protected web3Helper: Web3Helper;
 
-  constructor(provider: string) {
+  constructor(appUuid: string, appSecret: string, provider: string) {
+    this.appUuid = appUuid;
+    this.appSecret = appSecret;
     this.web3Helper = new Web3Helper(provider);
   }
 
@@ -28,14 +32,8 @@ export default class Twala {
     return wallet
   }
 
-  public signDocumentUuid(data: string, privateKey: string) {
-    type SignatureResult = {
-      message: string;
-      message_hash: string;
-      v: string;
-      r: string;
-      s: string;
-    };
-    return this.web3Helper.sign(data, privateKey) as SignatureResult;
+  public signDocumentUuid(uuid: string, privateKey: string) {
+    const signatureResult = this.web3Helper.sign(uuid, privateKey);
+    return signatureResult
   }
 }
