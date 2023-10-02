@@ -1,6 +1,6 @@
 # Twala Node.js Library
 
-The official Node.js library of Twala API for applications written in server-side JavaScript.
+The official Node.js library of Twala for applications written in JavaScript.
 
 [![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
 [![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
@@ -23,11 +23,11 @@ $ npm install @twala-io/twala-js --save
 
 ## Usage
 
-Initialize the library with your `appUuid`, `appSecret`, and `RPC provider`:
+Initialize the library with your `appUuid` and `appSecret`:
 
 ```js
 import Twala from '@twala-io/twala-js';
-const twala = new Twala(appUuid, appSecret, provider);
+const twala = new Twala(appUuid, appSecret);
 ```
 
 Use the library's methods as needed, such as generating nonces, generating account keys, and signing data:
