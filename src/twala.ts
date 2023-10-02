@@ -9,7 +9,7 @@ export default class Twala {
   protected cryptoHelper: CryptoHelper = new CryptoHelper();
   protected web3Helper: Web3Helper;
 
-  constructor(appUuid: string, appSecret: string, provider: string = "https://eth.public-rpc.com") {
+  constructor(appUuid: string, appSecret: string, provider: string = 'https://eth.public-rpc.com') {
     this.appUuid = appUuid;
     this.appSecret = appSecret;
     this.web3Helper = new Web3Helper(provider);
