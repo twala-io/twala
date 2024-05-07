@@ -1,6 +1,6 @@
-# Twala Node.js Library
+# Twala Sign SDK
 
-The official Node.js library of Twala for applications written in JavaScript.
+This is the official Twala Sign SDK for applications written in JavaScript.
 
 [![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
 [![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
