@@ -1,6 +1,6 @@
 # Twala Sign SDK
 
-This is the official Twala Sign SDK for applications written in JavaScript.
+This is the official Twala Sign SDK for applications written in JS.
 
 [![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-sign-js)
 [![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-sign-js)
