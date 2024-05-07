@@ -2,8 +2,8 @@
 
 This is the official Twala Sign SDK for applications written in JavaScript.
 
-[![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
-[![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-js)
+[![Version](https://img.shields.io/npm/v/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-sign-js)
+[![Downloads/week](https://img.shields.io/npm/dw/@twala-io/twala-js.svg)](https://npmjs.org/package/@twala-io/twala-sign-js)
 [![License](https://img.shields.io/npm/l/@twala-io/twala-js.svg)](https://github.com/twala-io/twala/blob/master/package.json)
 
 ## Requirements
