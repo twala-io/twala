@@ -1,4 +1,4 @@
-# Twala Sign SDK
+# Twala Sign JS
 
 This is the official Twala Sign SDK for applications written in JavaScript.
 
